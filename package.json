@@ -26,6 +26,7 @@
   "homepage": "https://github.com/contentful-labs/travis-notify-geckoboard",
   "dependencies": {
     "lodash": "~2.4.1",
+    "moment": "^2.18.1",
     "optimist": "~0.6.0",
     "questor": "~1.0.0-alpha"
   },

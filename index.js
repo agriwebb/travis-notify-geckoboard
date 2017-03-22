@@ -4,6 +4,7 @@
 
 var _ = require('lodash');
 var questor = require('questor');
+var moment = require('moment');
 
 var pushBaseURI = 'https://push.geckoboard.com/v1/send/';
 
@@ -44,10 +45,13 @@ TravisCIEnv.prototype.toTextWidgetValue = function() {
   var color = passed ? '#78ab49' : '#b84d38';
   var text = passed ? 'Passed' : 'Failed';
   var type = passed ? 0 : 1;
+  var buildRunDate = moment().format('D-MMM h:mma');
   return TextWidgetValue.create({
     text: [
       '<div>Build #' + this.buildNumber + '</div>',
-      '<div style="color: ' + color + '">' + text + '</div>'
+      '<div style="color: ' + color + '">' + text + '</div>',
+      '<div>&nbsp;</div>',
+      '<div>Ran on' + buildRunDate + '</div>'
     ].join('\n'),
     type: type
   });
