@@ -45,13 +45,15 @@ TravisCIEnv.prototype.toTextWidgetValue = function() {
   var color = passed ? '#78ab49' : '#b84d38';
   var text = passed ? 'Passed' : 'Failed';
   var type = passed ? 0 : 1;
-  var buildRunDate = moment().format('D-MMM h:mma');
+  var buildRunDate = moment();
+  buildRunDate.tz('Australia/Sydney');
+
   return TextWidgetValue.create({
     text: [
       '<div>Build #' + this.buildNumber + '</div>',
       '<div style="color: ' + color + '">' + text + '</div>',
       '<div>&nbsp;</div>',
-      '<div style="font-size: smaller;">' + buildRunDate + '</div>'
+      '<div style="font-size: smaller;">' + buildRunDate.format('D-MMM h:mma') + '</div>'
     ].join('\n'),
     type: type
   });
