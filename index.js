@@ -51,7 +51,7 @@ TravisCIEnv.prototype.toTextWidgetValue = function() {
       '<div>Build #' + this.buildNumber + '</div>',
       '<div style="color: ' + color + '">' + text + '</div>',
       '<div>&nbsp;</div>',
-      '<div>Ran on' + buildRunDate + '</div>'
+      '<div style="font-size: large;">Ran on ' + buildRunDate + '</div>'
     ].join('\n'),
     type: type
   });
