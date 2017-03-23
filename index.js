@@ -2,11 +2,11 @@
 
 'use strict';
 
-var _ = require('lodash');
-var questor = require('questor');
-var moment = require('moment');
-
-var pushBaseURI = 'https://push.geckoboard.com/v1/send/';
+const _ = require('lodash');
+const questor = require('questor');
+const moment = require('moment');
+const momenttz = require('moment-timezone');
+const pushBaseURI = 'https://push.geckoboard.com/v1/send/';
 
 exports.notifyDashboard = notifyDashboard;
 function notifyDashboard(options, data) {
